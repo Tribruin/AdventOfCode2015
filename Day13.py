@@ -2,6 +2,7 @@ from itertools import permutations, combinations
 
 inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day13-Input.txt"
 
+
 def processInputFile(filename):
 
     guests = {}
@@ -9,7 +10,12 @@ def processInputFile(filename):
 
     for line in f.readlines():
         lineSplit = line.rstrip().split(" ")
-        guestName, gainLoss, points, neighbor = lineSplit[0], lineSplit[2], int(lineSplit[3]), lineSplit[10][:-1]
+        guestName, gainLoss, points, neighbor = (
+            lineSplit[0],
+            lineSplit[2],
+            int(lineSplit[3]),
+            lineSplit[10][:-1],
+        )
         if gainLoss == "lose":
             points = -points
         if guestName not in guests.keys():
@@ -18,13 +24,14 @@ def processInputFile(filename):
 
     return guests
 
+
 def calculateHappiness(seatingArrangment):
     seatingArrangment.append(seatingArrangment[0])
     # print(seatingArrangment)
     happiness = 0
     for i in range(len(seatingArrangment) - 1):
         guest1 = seatingArrangment[i]
-        guest2 = seatingArrangment[i+1]
+        guest2 = seatingArrangment[i + 1]
         # print(guest1, guest2, allGuests[guest1][guest2], allGuests[guest2][guest1])
         happiness += allGuests[guest1][guest2] + allGuests[guest2][guest1]
     # print(happiness)
@@ -45,10 +52,10 @@ for i in allGuestSeatingArrangements:
 print(bestArrangement, bestHappiness)
 
 # Part 2
-allGuests['me'] = {}
+allGuests["me"] = {}
 for guest in allGuestNames:
-    allGuests['me'][guest] = 0
-    allGuests[guest]['me'] = 0
+    allGuests["me"][guest] = 0
+    allGuests[guest]["me"] = 0
 
 allGuestNames = set(allGuests.keys())
 allGuestSeatingArrangements = permutations(allGuestNames, len(allGuestNames))
