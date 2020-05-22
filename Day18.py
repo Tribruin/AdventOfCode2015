@@ -2,20 +2,23 @@ from os import system
 from time import sleep
 import numpy as np
 
-gridX, gridY = 100,100
+# gridX, gridY = 0,0
 # gridX, gridY = 6,6
 # steps = 4
 steps = 100
-inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-Input.txt"
-# inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-TestInput.txt"
+# inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-Input.txt"
+inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-TestInput2.txt"
 
 def parseInput(file):
     f = open(file, "r")
+    allLines = f.readlines()
+    gridY = len(allLines)
+    gridX = len(allLines[0].rstrip())
 
     array = np.zeros((gridY, gridX),dtype=np.bool)
 
     x, y = 0,0
-    for line in f.readlines():
+    for line in allLines:
         for char in line:
             if char == "#":
                 array[y][x] = True
@@ -28,6 +31,8 @@ def parseInput(file):
 def printArray(array):
 
     system('clear')
+
+    gridY, gridX = array.shape
 
     for y in range(gridY):
         for x in range(gridX):
@@ -54,7 +59,7 @@ def processMove(array):
                             lightsToCheck.append(array[yMove][xMove])
         return sum(lightsToCheck)
 
-    # print(getNeighbors(array, 2, 4))
+    gridY, gridX = array.shape
     newArray = np.zeros((gridX, gridY), dtype=np.bool)
     for y in range(gridY):
         for x in range(gridX):
@@ -88,6 +93,7 @@ def part1():
 
 def part2():
     lightArray = parseInput(inputFile)
+    gridY, gridX = lightArray.shape
     # Turn on stuck lights if not already on
     lightArray[0][0] = True
     lightArray[0][gridX-1] = True
