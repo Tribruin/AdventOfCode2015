@@ -45,7 +45,7 @@ def parseListPart2(inputData):
 f = open(filename)
 inputData = f.read()
 data = json.loads(inputData)
-# print(parseListPart1(data))
+print(parseListPart1(data))
 print(parseListPart2(data))
 
 

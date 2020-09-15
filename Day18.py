@@ -7,7 +7,8 @@ import numpy as np
 # steps = 4
 steps = 100
 # inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-Input.txt"
-inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-TestInput2.txt"
+# inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-TestInput2.txt"
+inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day18-Input.txt"
 
 def parseInput(file):
     f = open(file, "r")

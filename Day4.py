@@ -32,4 +32,4 @@ def part2():
     return
 
 print(part1())
-print(part2())
+# print(part2())

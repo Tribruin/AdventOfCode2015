@@ -1,4 +1,4 @@
-inputMolecule = "HOH"
+inputMolecule = "HOHOHO"
 
 inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day19-Input-Replacements-Test.txt"
 
@@ -21,18 +21,31 @@ def breakInputMolecule(molecule, replacementList):
     singleCharMolecules = list(i for i in molecule if len(i) == 1)
     return singleCharMolecules
 
+def combindMoleculeList(allNewMolecules):
+    newMolecules = list()
+    for i in range(len(allNewMolecules)):
+        newMolecule = ""
+        for letter in allNewMolecules[i]:
+            newMolecule += letter
+        newMolecules.append(newMolecule)
+    return list(set(newMolecules))
+
 # Part 1
 moleculeList = readInput(inputFile)
-print(moleculeList)
+# print(moleculeList)
 listOfMolecule = breakInputMolecule(inputMolecule, moleculeList)
-print(listOfMolecule)
+# print(listOfMolecule)
 listOfReplacements = []
 for i in range(len(listOfMolecule)):
+    # newMolecule = listOfMolecule
     molecule = listOfMolecule[i]
-    if molecule in set(moleculeList):
+    if molecule in set(moleculeList.keys()):
         for k in moleculeList[molecule]:
-            newMolecule = listOfMolecule
+            newMolecule = list(listOfMolecule)
             newMolecule[i] = k
             listOfReplacements.append(newMolecule)
 
-print(listOfReplacements)
+# uniqueMolecules = set(listOfReplacements)
+uniqueMolecules = combindMoleculeList(listOfReplacements)
+# print(listOfReplacements)
+print(uniqueMolecules)
