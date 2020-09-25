@@ -9,7 +9,7 @@ presentsToFind = 33100000
 
 def Part1():
     # Let's start at a reasonable high number house
-    house = 200000
+    house = 100000
     maxHouse = 800000
     presents = 0
 
@@ -38,7 +38,8 @@ def Part1():
 
         # print(f"House: {house} - {elvesThatVisit} - Presents {presents}")
         # print(f"House: {house} - elves {elvesThatVisit} - Presents {presents}")
-        # print(f"House: {house} - elves {len(elvesThatVisit)} - Presents {presents}")
+        if presents > 30000000:
+            print(f"House: {house} - elves {len(elvesThatVisit)} - Presents {presents}")
         if (house % 1000 == 0):
             print(house)
         house += 1
