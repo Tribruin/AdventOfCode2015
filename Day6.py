@@ -1,7 +1,7 @@
 import numpy as np
 
 gridX, gridY = 1000, 1000
-inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day6-Input.txt"
+inputFile = "Day6-Input.txt"
 # inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day6-Input-Test.txt"
 
 def parseInput(file):

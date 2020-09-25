@@ -45,7 +45,8 @@ print(reindeers)
 for i in range(totalTime):
     for reindeerName in reindeers:
         # print(f"{i+1} seconds: {reindeerName}: ", end="")
-        reindeerName = moveReindeer(reindeerName)
+        moveReindeer(reindeerName)
+        # reindeerName = moveReindeer(reindeerName)
         # print()
 
     reindeers = sorted(reindeers, key = lambda i : i['dist'], reverse = True)

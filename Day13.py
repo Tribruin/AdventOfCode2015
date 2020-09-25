@@ -1,6 +1,6 @@
 from itertools import permutations, combinations
 
-inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day13-Input.txt"
+inputFile = "Day13-Input.txt"
 
 
 def processInputFile(filename):
