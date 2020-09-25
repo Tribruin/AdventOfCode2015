@@ -1,5 +1,5 @@
 # inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day14-Input-Test.txt"
-inputFile = "/Users/rblount/OneDrive/AdventOfCode/2015/Day14-Input.txt"
+inputFile = "Day14-Input.txt"
 
 totalTime = 2503
 
