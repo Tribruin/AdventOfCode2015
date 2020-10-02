@@ -1,17 +1,14 @@
 # Day 20 - 
 import math
 
-# presentsToFind = 500
-presentsToFind = 33100000
-
-# house=list()
-# houseNumbers = list(range(1, maxNumOfHouses+1))
 
 def Part1():
     # Let's start at a reasonable high number house
-    house = 100000
+    house = 700000   
     maxHouse = 800000
     presents = 0
+    # presentsToFind = 500
+    presentsToFind = 33100000
 
     #Continue to check until the number of presents is => the number of presents to find
     while (presents < presentsToFind) and (house < maxHouse):
@@ -28,6 +25,7 @@ def Part1():
                     elvesThatVisit.append(i)
                     elvesThatVisit.append(house // i)
             i += 1
+        elvesThatVisit.sort()
 
 
         # Append the house number as the last in the range
@@ -38,8 +36,8 @@ def Part1():
 
         # print(f"House: {house} - {elvesThatVisit} - Presents {presents}")
         # print(f"House: {house} - elves {elvesThatVisit} - Presents {presents}")
-        if presents > 30000000:
-            print(f"House: {house} - elves {len(elvesThatVisit)} - Presents {presents}")
+        # if presents > presentsToFind:
+        #     print(f"House: {house} - elves {len(elvesThatVisit)} - Presents {presents}")
         if (house % 1000 == 0):
             print(house)
         house += 1
