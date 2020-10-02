@@ -4,11 +4,11 @@ import math
 
 def Part1():
     # Let's start at a reasonable high number house
-    house = 700000   
+    house = 500000   
     maxHouse = 800000
     presents = 0
     # presentsToFind = 500
-    presentsToFind = 33100000
+    presentsToFind = 33000000
 
     #Continue to check until the number of presents is => the number of presents to find
     while (presents < presentsToFind) and (house < maxHouse):
