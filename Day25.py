@@ -1,11 +1,10 @@
-
 import numpy as np
 
 startingNumber = 20151125
-multBy=252533
-dividBy=33554393
+multBy = 252533
+dividBy = 33554393
 
-#using a 0 based array, where puzzle is 1 based
+# using a 0 based array, where puzzle is 1 based
 finalColumn = 3029
 finalRow = 2947
 
@@ -32,6 +31,4 @@ for row in range(2, arraySize):
         if (currentColumn == finalColumn) and (currentRow == finalRow):
             # print(finalRow, finalColumn, currentNumber)
             exit(0)
-
-
 
